@@ -1,7 +1,8 @@
 
 <button (click)="addThing()" >CLick me </button>
 <div *ngFor="let i of all_tasks">
-  <p>{{i | json}}</p>
+  <ul><p>{{i['title'] | json}}</p></ul>
+  <ul><li>{{i['description'] | json}}</li></ul>
 </div>
 
 

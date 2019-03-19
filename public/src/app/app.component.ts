@@ -9,11 +9,13 @@ import { HttpService } from './http.service';
 export class AppComponent implements OnInit {
   title = 'app';
   all_tasks :any;
+  num:number;
 
   constructor(private _httpService: HttpService ){}
 
   ngOnInit() {
     this.getAllThingies();
+    this.num = 7;
   }
 
   addThing() {
@@ -29,7 +31,7 @@ export class AppComponent implements OnInit {
   getAllThingies() {
     this._httpService.getTasks()
     .subscribe(data => {
-      this.all_tasks = data;
+      this.all_tasks= data;
     });
   }
 
