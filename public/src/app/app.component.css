@@ -1,0 +1,10 @@
+.border{
+    border: 1px solid purple;
+    padding: 20px;
+}
+
+.border2{
+    border: 1px solid blue;
+    padding: 10px;
+    width: 300px;
+}

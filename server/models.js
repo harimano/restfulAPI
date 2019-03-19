@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/angular_first3', {useNewUrlParser:true})
+mongoose.connect('mongodb://localhost/angular_first4', {useNewUrlParser:true})
   .catch(err => console.log(err));
 
 const TaskSchema = new mongoose.Schema({

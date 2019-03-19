@@ -1,13 +1,56 @@
+
+<!-- <button (click)="toggleDetails()">Show Descriptions</button> -->
+
+<div class="border">
+    <h2>Add New Task</h2>
+    <form (submit)="onSubmit()">
+        <!-- use the json pipe to see how newTask changes in real time -->
+        <!-- <p> {{ newTask | json }} </p> -->
+        <label for="newTask">New Task </label>
+            <input type="text" name="newTask.title" [(ngModel)]="newTask.title" />
+            <label for="newTask">Task Description </label>
+            <input type="text" name="newTask.description" [(ngModel)]="newTask.description" />
+            <input type="submit" value="Create Task" />
+        </form>
+  
+</div>
+<br>
+
 <div>
-  <button (click)="addThing()" > Add </button>
-  <button (click)="getAllThingies()">Show all</button>
+    <button (click)="addThing()" > Add </button>
+    <button (click)="getAllThingies()">Show all</button>
 </div>
-<button (click)="toggleDetails()">Show Descriptions</button>
+<br>
 <div *ngIf="getAllThingies">
-  <div *ngFor="let i of all_tasks">
-    <app-task></app-task>
+    <div *ngFor="let i of all_tasks">
+      <div class="border2">
+          <h3>{{i.title}}</h3>
+          <p>{{i.description}}</p>
+          <button  (click)="editClick([i._id])">Edit</button>
+          <button  (click)="deleteTask([i._id])">Delete</button>
+      </div>
+     
+    </div>
   </div>
+<br>  
+<div *ngIf="clickedEdit">
+    <div class="border">
+        <h2>Edit New Task</h2>
+        <form (submit)="onSubmit2()">
+            <!-- use the json pipe to see how newTask changes in real time -->
+            <!-- <p> {{ editedtask | json }} </p> -->
+            <label for="editedtask">Edit Task </label>
+                <input type="text" value="" name="editedtask.title" [(ngModel)]="editedtask.title" />
+                <label for="editedtask">Edit Description </label>
+                <input type="text" value="" name="editedtask.description" [(ngModel)]="editedtask.description" />
+                <input type="submit" value="edit Task" />
+            
+            </form>
+        
+    </div>
 </div>
+
+    
 
 
 
