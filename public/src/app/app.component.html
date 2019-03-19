@@ -1,9 +1,14 @@
-
-<button (click)="addThing()" >CLick me </button>
-<div *ngFor="let i of all_tasks">
-  <ul><p>{{i['title'] | json}}</p></ul>
-  <ul><li>{{i['description'] | json}}</li></ul>
+<div>
+  <button (click)="addThing()" > Add </button>
+  <button (click)="getAllThingies()">Show all</button>
 </div>
+<button (click)="toggleDetails()">Show Descriptions</button>
+<div *ngIf="getAllThingies">
+  <div *ngFor="let i of all_tasks">
+    <app-task></app-task>
+  </div>
+</div>
+
 
 
 

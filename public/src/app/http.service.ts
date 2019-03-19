@@ -15,7 +15,10 @@ export class HttpService {
     // console.log(task_id);
     // return 1;
     console.log("ID is ", task_id);
-    return this._http.get('api/tasks/'+task_id);
+    return this._http.get('api/tasks/' + task_id);
+  }
+  getDesc(task_id){
+    return this._http.get('api/tasks/' + task_id);
   }
 
   getTasks(){
