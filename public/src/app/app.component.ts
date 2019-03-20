@@ -21,17 +21,16 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     // this.getAllThingies();
     // this.num = 7;
-    this.newTask = { title: "", description: "" }
     this.editedtask ={ id:"", title: "", description: "" }
   }
 
-  onSubmit() {
-    let observable = this._httpService.addTask(this.newTask);
-    observable.subscribe(data =>{
-      console.log("got data from post back", data);
-      this.newTask = { title: "", description: "" }
-    })
-  }
+  // onSubmit() {
+  //   let observable = this._httpService.addTask(this.newTask);
+  //   observable.subscribe(data =>{
+  //     console.log("got data from post back", data);
+  //     this.newTask = { title: "", description: "" }
+  //   })
+  // }
 
   editClick(id:string){
     this._httpService.getTask(id).subscribe(data =>this.editedtask = data);
